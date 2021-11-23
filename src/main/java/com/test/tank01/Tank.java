@@ -2,11 +2,13 @@ package com.test.tank01;
 
 import com.test.commonenum.Direction;
 import lombok.Data;
+
+import javax.swing.*;
 import java.awt.*;
+import java.text.MessageFormat;
 
 @Data
 public abstract class Tank {
-    private String imagePrefix;
     private Integer x = 10;
     private Integer y = 10;
     private Direction direction = Direction.UP;
@@ -19,6 +21,16 @@ public abstract class Tank {
 
     public void draw(Graphics g) {
         g.drawImage(this.getCurrentImage(), this.getX(), this.getY(), null);
+    }
+
+    public Tank(Integer x, Integer y, String imagePrefix) {
+        this.setX(x);
+        this.setY(y);
+        this.upImage = new ImageIcon(ClassLoader.getSystemResource(MessageFormat.format(imagePrefix, Direction.UP.getCode())).getPath()).getImage();
+        this.downImage = new ImageIcon(ClassLoader.getSystemResource(MessageFormat.format(imagePrefix, Direction.DOWN.getCode())).getPath()).getImage();
+        this.leftImage = new ImageIcon(ClassLoader.getSystemResource(MessageFormat.format(imagePrefix, Direction.LEFT.getCode())).getPath()).getImage();
+        this.rightImage = new ImageIcon(ClassLoader.getSystemResource(MessageFormat.format(imagePrefix, Direction.RIGHT.getCode())).getPath()).getImage();
+        this.setCurrentImage(upImage);
     }
 
     public void move(Direction direction) {

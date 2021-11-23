@@ -17,7 +17,7 @@ public class MyFrame extends JFrame {
         this.addKeyListener(mp);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1000,750);
+        this.setSize(1000, 750);
     }
 
 

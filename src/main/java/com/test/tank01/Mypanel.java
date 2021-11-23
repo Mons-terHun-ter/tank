@@ -8,7 +8,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class Mypanel extends JPanel implements KeyListener {
-    private Hero hero = new Hero(10,10);
+    private Hero hero = new Hero(10, 10);
+
     @Override
     public void paint(Graphics g) {
         super.paint(g);
