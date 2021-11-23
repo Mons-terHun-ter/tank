@@ -12,7 +12,6 @@ public class Mypanel extends JPanel implements KeyListener {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        g.fillRect(0, 0, 1000, 750);
         hero.draw(g);
     }
 
